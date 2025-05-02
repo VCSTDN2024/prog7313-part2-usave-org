@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>USave - Create Account</title>
+    <link rel="stylesheet" href="styles/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Logo -->
+        <div class="logo">
+            <p class="logo-u">U</p>
+            <p class="logo-save">SAVE</p>
+        </div>
+
+        <!-- Create Account Title -->
+        <p class="form-title">Create an Account</p>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <!-- Name Field -->
+            <div class="input-field">
+                <p class="field-label">Name</p>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="ex: Jane Doe">
+                </div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="input-field">
+                <p class="field-label">Email</p>
+                <div class="input-wrapper">
+                    <input type="email" placeholder="ex: usave@gmail.com">
+                </div>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="input-field">
+                <p class="field-label">Phone Number</p>
+                <div class="input-wrapper">
+                    <input type="tel" placeholder="ex: 081 237 2231">
+                </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-field">
+                <p class="field-label">Password</p>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="***************">
+                    <div class="eye-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retype Password Field -->
+            <div class="input-field">
+                <p class="field-label">Retype Password</p>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="***************">
+                    <div class="eye-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="terms-container">
+            <input type="checkbox" class="terms-checkbox">
+            <p class="terms-text">I agree to the Terms and Conditions</p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message" style="display: none; color: #52c41a; margin-top: 10px; text-align: center; font-size: 14px;"></div>
+
+        <!-- Signup Button -->
+        <div class="signup-button">
+            <p>Signup</p>
+        </div>
+        <div id="signupPrompt" class="signup-prompt" style="display:none;">
+            <span id="signupPromptText"></span>
+        </div>
+       
+        <!-- Login Link -->
+        <p class="login-link">Already have an account? <span>Login</span></p>
+    </div>
+
+    <script src="scripts/signup.js"></script>
+</body>
+</html>

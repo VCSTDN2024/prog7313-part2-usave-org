@@ -1,0 +1,94 @@
+html, body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.logo-u {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: rgba(253, 197, 0, 1);
+}
+
+.logo-save {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.spacer {
+    height: 3vh;
+}
+
+.welcome-illustration {
+    width: 90vw;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.welcome-content {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    background-image: linear-gradient(180deg, rgba(106, 141, 75, 1) 30%, rgba(58, 90, 64, 1) 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+}
+.welcome-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+
+.welcome-message {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+    color: white;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.welcome-btn {
+    width: 80vw;
+    max-width: 320px;
+    height: 48px;
+    background: #fdc500;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 2vh auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.welcome-btn:hover {
+    background: #e6b800;
+}
