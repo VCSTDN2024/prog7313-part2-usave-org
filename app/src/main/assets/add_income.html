@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>USave - Add Income</title>
+    <link rel="stylesheet" href="styles/add_income.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo">
+                <p>U</p>
+                <p>Income</p>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <!-- Income Name -->
+            <div class="form-group">
+                <label for="income-name" class="form-label">Income Name</label>
+                <input type="text" id="income-name" class="form-input" placeholder="e.g., Salary">
+            </div>
+
+            <!-- Amount -->
+            <div class="form-group">
+                <label for="income-amount" class="form-label">Amount</label>
+                <input type="text" id="income-amount" class="form-input" placeholder="e.g., R1,234">
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+                <label class="form-label">Category</label>
+                <div class="category-options">
+                    <div class="category-option active" data-category="monthly">Monthly Payment</div>
+                    <div class="category-option" data-category="investment">Investment</div>
+                    <div class="category-option" data-category="gift">Gift</div>
+                    <div class="category-option" data-category="side">Side Work</div>
+                    <div class="category-option" data-category="custom">Custom...</div>
+                </div>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label for="income-date" class="form-label">Date</label>
+                <input type="date" id="income-date" class="form-input">
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group">
+                <label for="income-notes" class="form-label">Notes (Optional)</label>
+                <textarea id="income-notes" class="notes-textarea" placeholder="Add any additional details..."></textarea>
+            </div>
+
+            <!-- Recurring Income Checkbox -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="recurring-income">
+                <label for="recurring-income" class="checkbox-label">Recurring Income?</label>
+            </div>
+
+            <!-- Add Income Button -->
+            <button class="add-btn">Add Income</button>
+        </div>
+
+        <!-- Dropdown Menu for Plus Button -->
+        <div id="plusDropdown" class="dropdown">
+            <div class="dropdown-item" onclick="showActionPage('expense')">
+                <svg fill="none" stroke="#FDC500" stroke-width="2" viewBox="0 0 24 24">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Add Expense
+            </div>
+            <div class="dropdown-item" onclick="showActionPage('budget')">
+                <svg fill="none" stroke="#FDC500" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                Add Budget
+            </div>
+            <div class="dropdown-item" onclick="showActionPage('income')">
+                <svg fill="none" stroke="#FDC500" stroke-width="2" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Add Income
+            </div>
+        </div>
+
+        <!-- Bottom Fixed Container -->
+        <div class="bottom-fixed-container">
+            <!-- Bottom Navigation -->
+            <div class="bottom-navigation">
+                <svg class="bottom-nav-bg" width="100%" height="67" viewBox="0 0 360 67" preserveAspectRatio="none"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 0.4C0 0.4 68.12 0 119.52 0C146.88 0 155.03 28.88 180 28.88C204.96 28.88 211.2 0 237.12 0C290.88 0 360 0.4 360 0.4L360 67L0 67L0 0.4Z"
+                        fill="#080D09" fill-rule="evenodd" />
+                </svg>
+
+                <div class="nav-item" onclick="navigateTo('overview')">
+                    <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 2.66L28 12L28 26.66C28 27.37 27.71 28.05 27.21 28.55C26.71 29.05 26.04 29.33 25.33 29.33L6.66 29.33C5.95 29.33 5.28 29.05 4.78 28.55C4.28 28.05 4 27.37 4 26.66L4 12L16 2.66Z"
+                            stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M12 29.33L12 16L20 16L20 29.33" stroke="#FDC500" stroke-width="1.5"
+                            stroke-linejoin="round" stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="nav-item" onclick="navigateTo('calendar')">
+                    <svg width="34" height="33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M26.91 5.5C28.48 5.5 29.75 6.73 29.75 8.25L29.75 27.5C29.75 29.01 28.48 30.25 26.91 30.25L7.08 30.25C5.51 30.25 4.25 29.01 4.25 27.5L4.25 8.25C4.25 6.73 5.51 5.5 7.08 5.5L26.91 5.5Z"
+                            stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round" />
+                        <path
+                            d="M21.93 2.77L21.91 2.75C21.91 2.32 22.24 2 22.66 2C23.08 2 23.41 2.32 23.41 2.75L23.39 2.77L21.93 2.77ZM23.39 8.22L23.41 8.25C23.41 8.67 23.08 9 22.66 9C22.24 9 21.91 8.67 21.91 8.25L21.93 8.22L23.39 8.22Z"
+                            fill="#FDC500" />
+                        <path d="M22.66 2.75L22.66 8.25" stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M11.33 2.75L11.33 8.25" stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M4.25 13.75L29.75 13.75" stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="nav-item plus-button" onclick="togglePlusDropdown()">
+                    <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="24" cy="24" rx="24" ry="24" fill="#0E0404" />
+                        <path d="M24 17L24 31" stroke="#FDC500" stroke-width="2" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M17 24L31 24" stroke="#FDC500" stroke-width="2" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+
+                <div class="nav-item" onclick="navigateTo('statistics')">
+                    <svg width="26.899963" height="23.619995" viewBox="0 0 26.9 23.62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Vector" d="M2.62 0C1.19 0 0 1.18 0 2.63L0 21.31C0 22.58 1.03 23.62 2.3 23.62L24.6 23.62C25.86 23.62 26.9 22.58 26.9 21.31L26.9 6.23C26.9 4.97 25.86 3.93 24.6 3.93L22.96 3.93L22.96 0.66C22.96 0.31 22.65 0 22.3 0L2.62 0ZM2.62 1.31L21.65 1.31L21.65 3.93L2.62 3.93C1.89 3.93 1.31 3.37 1.31 2.63C1.31 1.89 1.89 1.31 2.62 1.31ZM1.31 4.89C1.7 5.12 2.14 5.25 2.62 5.25C10.02 5.25 18.25 5.25 24.6 5.25C25.16 5.25 25.58 5.67 25.58 6.23L25.58 10.17L16.07 10.17C15.18 10.17 14.43 10.91 14.43 11.8L14.43 15.75C14.43 16.64 15.18 17.39 16.07 17.39L25.58 17.39L25.58 21.31C25.58 21.88 25.16 22.29 24.6 22.29L2.3 22.29C1.73 22.29 1.31 21.88 1.31 21.31L1.31 4.89ZM16.07 11.48L25.58 11.48L25.58 16.06L16.07 16.06C15.88 16.06 15.75 15.93 15.75 15.75L15.75 11.8C15.75 11.62 15.88 11.48 16.07 11.48ZM19.35 12.47C18.62 12.47 18.04 13.04 18.04 13.78C18.04 14.5 18.62 15.09 19.35 15.09C20.08 15.09 20.67 14.5 20.67 13.78C20.67 13.04 20.08 12.47 19.35 12.47Z" fill="#FDC500" fill-opacity="1.000000" fill-rule="nonzero"/>
+                    </svg>
+                </div>
+
+                <div class="nav-item" onclick="navigateTo('settings')">
+                    <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M26.66 28L26.66 25.33C26.66 23.91 26.1 22.56 25.1 21.56C24.1 20.56 22.74 20 21.33 20L10.66 20C9.25 20 7.89 20.56 6.89 21.56C5.89 22.56 5.33 23.91 5.33 25.33L5.33 28"
+                            stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+                        <path
+                            d="M16 14.66C13.05 14.66 10.66 12.27 10.66 9.33C10.66 6.38 13.05 4 16 4C18.94 4 21.33 6.38 21.33 9.33C21.33 12.27 18.94 14.66 16 14.66Z"
+                            stroke="#FDC500" stroke-width="1.5" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Google Ad Space -->
+            <div class="ad-container">
+                <p class="ad-text">ADVERT</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/add_income.js"></script>
+</body>
+</html>
